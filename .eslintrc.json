@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "devDependencies": true
+    // suppress errors for devDependency in import statements
+  },
+  "plugins": ["react"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    // suppress errors for missing 'import React' in files
+    "react/react-in-jsx-scope": "off",
+    // suppress errors for forbid the use of extraneous packages
+    "import/no-extraneous-dependencies": "off",
+    // suppress errors for disallow specified names in exports
+    "no-restricted-exports": "off",
+    // allow jsx syntax in js files (for next.js project)
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx"] }
+    ] //should add ".ts" if typescript project
+  }
+}
