@@ -1,0 +1,31 @@
+# Files
+*.local
+.env.example
+.dockerignore
+.gitignore
+Dockerfile
+Makefile
+LICENSE
+**/*.md
+
+# Test
+*.out
+
+# Folders
+node_modules
+dist
+dist-ssr
+.vscode/*
+!.vscode/extensions.json
+.idea
+.git/
+.github/
+build/
+temp/
+tmp/
+cli/
+cert/
+gen/
+
+# misc
+Todo.txt
