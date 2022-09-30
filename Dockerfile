@@ -2,10 +2,9 @@ FROM node:16.16-alpine AS builder
 WORKDIR /app
 COPY package.json .
 RUN npm i -g vite
+RUN yarn
 COPY .yarn ./.yarn
 COPY .yarnrc.yml .
-RUN yarn
-RUN yarn install
 COPY . .
 
 ENV VITE_ZOOM_VIDEO_SDK_KEY=cMUg4M8Bbd8kjdqMZN23cb5tcfb5Apv7Pv1z
