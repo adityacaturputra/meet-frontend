@@ -5,16 +5,12 @@ import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import ZoomContext from "./Contexts/ZoomContext";
 import MeetFinished from "./Modules/ZoomMeeting/Pages/MeetFinished";
 import MeetLandingPage from "./Modules/ZoomMeeting/Pages/MeetLandingPage";
-import userAuthorization from "./Utils/Helpers/userAuthorization";
 
 function App() {
   document.title = "Pelindo Meet";
 
-  const isAuthorized = userAuthorization();
   let zmClient = null;
-  if (isAuthorized) {
-    zmClient = ZoomVideo.createClient();
-  }
+  zmClient = ZoomVideo.createClient();
 
   return (
     <BrowserRouter>

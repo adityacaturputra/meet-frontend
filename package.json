@@ -50,5 +50,5 @@
     "uuidv4": "^6.2.13",
     "vite": "^2.9.13"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.3"
 }
