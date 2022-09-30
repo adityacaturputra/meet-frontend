@@ -5,7 +5,25 @@ import { defineConfig, loadEnv } from "vite";
 export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
   return defineConfig({
-    plugins: [react()],
+    plugins: [
+      react(),
+      {
+        name: "configure-response-headers",
+        configureServer: (server) => {
+          server.middlewares.use((_req, res, next) => {
+            res.setHeader(
+              "Cross-Origin-Embedder-Policy",
+              "require-corp",
+            );
+            res.setHeader(
+              "Cross-Origin-Opener-Policy",
+              "same-origin",
+            );
+            next();
+          });
+        },
+      },
+    ],
     server: {
       port: 3004,
     },
