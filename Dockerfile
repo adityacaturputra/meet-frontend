@@ -2,8 +2,9 @@ FROM node:16.16-alpine AS builder
 WORKDIR /app
 COPY package.json .
 RUN npm i -g vite
-#COPY .yarn ./.yarn
+COPY .yarn ./.yarn
 COPY .yarnrc.yml .
+RUN yarn
 RUN yarn install
 COPY . .
 
