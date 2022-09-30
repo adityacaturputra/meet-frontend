@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package.json .
 RUN npm i -g vite
 COPY .yarn ./.yarn
-COPY .yarnrc.yml .
+#COPY .yarnrc.yml .
 RUN yarn install
 COPY . .
 
